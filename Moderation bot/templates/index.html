@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Token Controller Bot</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #0f0f0f; color: #fff; }
+        .container { max-width: 600px; margin: 0 auto; }
+        h1 { color: #7289da; }
+        .info { background: #2c2f33; padding: 15px; border-radius: 5px; margin: 10px 0; }
+        .stat { margin: 10px 0; font-size: 16px; }
+        a { color: #7289da; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Discord Token Controller Bot</h1>
+        <div class="info">
+            <div class="stat"><b>Status:</b> ✅ Running</div>
+            <div class="stat"><b>Clients Active:</b> {active_clients}</div>
+            <div class="stat"><b>Stored Tokens:</b> {token_count}</div>
+        </div>
+        <div class="info">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="/storage">View Token Storage</a></li>
+                <li><a href="/help">Bot Commands</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

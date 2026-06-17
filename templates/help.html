@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bot Commands</title>
+    <style>
+        :root {
+            --bg: #0f1117;
+            --panel: #161b22;
+            --panel-alt: #0d1117;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --muted: #8b949e;
+            --accent: #58a6ff;
+        }
+        body {
+            margin: 0;
+            background: linear-gradient(180deg, var(--bg), #090c12);
+            color: var(--text);
+            font-family: "JetBrains Mono", "Fira Code", monospace;
+        }
+        .shell {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 32px 18px 48px;
+        }
+        .console {
+            background: var(--panel-alt);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .console-header {
+            background: var(--panel);
+            border-bottom: 1px solid var(--border);
+            padding: 10px 14px;
+            color: var(--muted);
+        }
+        .console-body {
+            padding: 18px;
+        }
+        .category {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 14px;
+        }
+        .category h3 { margin: 0 0 10px; color: var(--accent); }
+        .cmd { margin: 6px 0; color: #d2a8ff; }
+        .desc { color: var(--muted); margin-left: 10px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="shell">
+        <section class="console">
+            <div class="console-header">terminal@help:~$ cat commands.txt</div>
+            <div class="console-body">
+                <p><a href="/">← back to dashboard</a></p>
+
+                <div class="category">
+                    <h3>General</h3>
+                    <div class="cmd">!h</div>
+                    <div class="desc">Show setup and command guide</div>
+                    <div class="cmd">!listc</div>
+                    <div class="desc">Show the essential command list</div>
+                    <div class="cmd">!checktoken &lt;token&gt;</div>
+                    <div class="desc">Validate a token and detect bot vs user</div>
+                </div>
+
+                <div class="category">
+                    <h3>Token Storage</h3>
+                    <div class="cmd">!addtoken &lt;token&gt; [label]</div>
+                    <div class="desc">Save a token with an optional label</div>
+                    <div class="cmd">!listtokens</div>
+                    <div class="desc">Show stored tokens (masked)</div>
+                    <div class="cmd">!rmtoken &lt;id|token&gt;</div>
+                    <div class="desc">Remove a token</div>
+                    <div class="cmd">!exportconfig</div>
+                    <div class="desc">Export tokens to config.json</div>
+                    <div class="cmd">!importconfig</div>
+                    <div class="desc">Import tokens from config.json</div>
+                </div>
+
+                <div class="category">
+                    <h3>Runtime</h3>
+                    <div class="cmd">!runtokens</div>
+                    <div class="desc">Start all saved clients</div>
+                    <div class="cmd">!runtoken &lt;tokenid&gt;</div>
+                    <div class="desc">Start a single client</div>
+                    <div class="cmd">!joinvc &lt;channel_name&gt;</div>
+                    <div class="desc">Make all clients join a voice channel</div>
+                    <div class="cmd">!joinvc_token &lt;tokenid&gt;</div>
+                    <div class="desc">Make one client join your current voice channel</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

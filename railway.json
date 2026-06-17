@@ -1,0 +1,15 @@
+{
+  "startCommand": "uvicorn src.web:app --host 0.0.0.0 --port $PORT",
+  "variables": [
+    {
+      "key": "CONTROLLER_TOKEN",
+      "value": "",
+      "description": "Discord controller bot token (set this in Railway)"
+    },
+    {
+      "key": "PORT",
+      "value": "5000",
+      "description": "Port Railway should use for the web server"
+    }
+  ]
+}

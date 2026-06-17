@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bot Commands</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #0f0f0f; color: #fff; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { color: #7289da; }
+        .category { background: #2c2f33; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .cmd { margin: 10px 0; font-family: monospace; color: #99aab5; }
+        .desc { color: #aaa; margin-left: 20px; }
+        a { color: #7289da; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bot Commands</h1>
+        <p><a href="/">← Back</a></p>
+
+        <div class="category">
+            <h3>Token Management</h3>
+            <div class="cmd">!addtoken &lt;token&gt; [label]</div>
+            <div class="desc">Add a token with optional label</div>
+            <div class="cmd">!rmtoken &lt;id|token&gt;</div>
+            <div class="desc">Remove token by ID or exact token</div>
+            <div class="cmd">!listtokens</div>
+            <div class="desc">List all stored tokens (masked)</div>
+        </div>
+
+        <div class="category">
+            <h3>Bulk Commands</h3>
+            <div class="cmd">!runtokens</div>
+            <div class="desc">Start all stored token clients</div>
+            <div class="cmd">!joinvc &lt;channel_name&gt;</div>
+            <div class="desc">All tokens join a voice channel</div>
+        </div>
+
+        <div class="category">
+            <h3>Per-Token Commands</h3>
+            <div class="cmd">!runtoken &lt;tokenid&gt;</div>
+            <div class="desc">Start a specific token</div>
+            <div class="cmd">!joinvc_token &lt;tokenid&gt;</div>
+            <div class="desc">Token joins your current VC</div>
+            <div class="cmd">!joinsv &lt;tokenid&gt; &lt;invite_url&gt;</div>
+            <div class="desc">Token joins a server</div>
+            <div class="cmd">!say &lt;tokenid&gt; &lt;userid&gt; &lt;message&gt;</div>
+            <div class="desc">Token sends DM to user</div>
+        </div>
+    </div>
+</body>
+</html>

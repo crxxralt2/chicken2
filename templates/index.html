@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Token Controller Bot</title>
+    <style>
+        :root {
+            --bg: #0f1117;
+            --panel: #161b22;
+            --panel-alt: #0d1117;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --muted: #8b949e;
+            --accent: #58a6ff;
+            --green: #3fb950;
+            --red: #f85149;
+            --yellow: #d29922;
+        }
+        body {
+            margin: 0;
+            background: linear-gradient(180deg, var(--bg), #090c12);
+            color: var(--text);
+            font-family: "JetBrains Mono", "Fira Code", monospace;
+        }
+        .shell {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 32px 18px 48px;
+        }
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+        .topbar h1 {
+            margin: 0;
+            color: var(--accent);
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 12px;
+            padding: 6px 10px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--panel-alt);
+        }
+        .console {
+            background: var(--panel-alt);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+        }
+        .console-header {
+            background: var(--panel);
+            border-bottom: 1px solid var(--border);
+            padding: 10px 14px;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        .console-body {
+            padding: 18px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .stat-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px;
+        }
+        .label {
+            color: var(--muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .value {
+            font-size: 1.4rem;
+            margin-top: 6px;
+        }
+        .log-line {
+            color: var(--text);
+            margin: 6px 0;
+            white-space: pre-wrap;
+        }
+        .log-line .prompt { color: var(--accent); }
+        .log-line .ok { color: var(--green); }
+        .log-line .warn { color: var(--yellow); }
+    </style>
+</head>
+<body>
+    <div class="shell">
+        <div class="topbar">
+            <h1>Discord Token Controller</h1>
+            <div class="nav">
+                <a href="/storage">/storage</a>
+                <a href="/help">/help</a>
+            </div>
+        </div>
+
+        <section class="console">
+            <div class="console-header">terminal@dashboard:~$ status</div>
+            <div class="console-body">
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="label">Status</div>
+                        <div class="value">● Running</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="label">Active Clients</div>
+                        <div class="value">{active_clients}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="label">Stored Tokens</div>
+                        <div class="value">{token_count}</div>
+                    </div>
+                </div>
+
+                <div class="log-line"><span class="prompt">$</span> controller booted</div>
+                <div class="log-line"><span class="prompt">$</span> token database ready</div>
+                <div class="log-line"><span class="ok">✓</span> web dashboard listening on local routes</div>
+                <div class="log-line"><span class="warn">!</span> use <strong>/storage</strong> to inspect saved tokens</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

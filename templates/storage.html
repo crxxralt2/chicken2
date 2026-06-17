@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Token Storage</title>
+    <style>
+        :root {
+            --bg: #0f1117;
+            --panel: #161b22;
+            --panel-alt: #0d1117;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --muted: #8b949e;
+            --accent: #58a6ff;
+            --green: #3fb950;
+        }
+        body {
+            margin: 0;
+            background: linear-gradient(180deg, var(--bg), #090c12);
+            color: var(--text);
+            font-family: "JetBrains Mono", "Fira Code", monospace;
+        }
+        .shell {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 32px 18px 48px;
+        }
+        .console {
+            background: var(--panel-alt);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .console-header {
+            background: var(--panel);
+            border-bottom: 1px solid var(--border);
+            padding: 10px 14px;
+            color: var(--muted);
+        }
+        .console-body {
+            padding: 18px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--panel-alt);
+        }
+        th, td {
+            padding: 12px 10px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+            font-size: 0.92rem;
+        }
+        th {
+            color: var(--accent);
+            background: #0b1220;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        tbody tr:hover {
+            background: #111826;
+        }
+        .token { color: var(--green); }
+        .pill {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            background: #11263d;
+            color: var(--accent);
+            font-size: 0.78rem;
+        }
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="shell">
+        <section class="console">
+            <div class="console-header">terminal@storage:~$ ls -la /tokens</div>
+            <div class="console-body">
+                <p><a href="/">← back to dashboard</a></p>
+                {token_rows}
+            </div>
+        </section>
+    </div>
+</body>
+</html>
