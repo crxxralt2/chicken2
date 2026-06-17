@@ -16,11 +16,22 @@ def load_template(name: str) -> str:
     return path.read_text(encoding='utf-8')
 
 
+def render_template(name: str, **replacements: str) -> str:
+    content = load_template(name)
+    for key, value in replacements.items():
+        content = content.replace(f'{{{key}}}', str(value))
+    return content
+
+
 @app.get('/', response_class=HTMLResponse)
 def home():
     rows = db.list_tokens_sync()
     active_clients = len(token_runner.clients)
-    content = load_template('index.html').format(active_clients=active_clients, token_count=len(rows))
+    content = render_template(
+        'index.html',
+        active_clients=active_clients,
+        token_count=len(rows)
+    )
     return HTMLResponse(content=content)
 
 
@@ -40,7 +51,7 @@ def storage():
         row_html += f'        </table>\n        <p><b>Total:</b> {len(rows)} tokens stored</p>\n'
         token_rows = row_html
 
-    content = load_template('storage.html').format(token_rows=token_rows)
+    content = render_template('storage.html', token_rows=token_rows)
     return HTMLResponse(content=content)
 
 
